@@ -1,0 +1,17 @@
+# создание объявления
+POST http://127.0.0.1:8000/courses/
+Content-Type: application/json
+Authorization: Token 7ba2937991ece14fe2c2c716b689f2630b798ddf
+
+{
+  "name": "oooo"
+
+}
+###
+
+
+# получение объявлений
+GET http://127.0.0.1:8000/courses/
+Content-Type: application/json
+
+###
