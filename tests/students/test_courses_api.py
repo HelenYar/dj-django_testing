@@ -10,13 +10,16 @@ def test_example():
 
 
 @pytest.mark.django_db
-def test_first_courses(client, course_factory):
+def test_course_retrieve(client, course_factory):
+    the_course = course_factory(_quantity=1)
+    its_id = the_course[0].id
+    its_name = the_course[0].name
     url = reverse("courses-list")
-    course = course_factory(name="Экономика")
-    resp = client.get(url)
+    resp = client.get(url + f"{its_id}/")
     assert resp.status_code == HTTP_200_OK
     resp_json = resp.json()
-    assert resp_json[0]["name"] == course.name
+    assert resp_json.get('id') == its_id
+    assert resp_json.get('name') == its_name
 
 
 @pytest.mark.django_db

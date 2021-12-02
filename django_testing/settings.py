@@ -82,10 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'netology_django_testing',
+        'USER': 'helen',
         'TEST': {
             'NAME': 'test_netology_django_testing',
         },
-        'USER': 'helen',
         'PASSWORD': '123',
         'HOST': '127.0.0.1',
         'PORT': '5432',
